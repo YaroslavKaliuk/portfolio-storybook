@@ -1,0 +1,73 @@
+/* .loaderMaterial
+-------------------------------------------------------------*/
+$r: ".loaderMaterial";
+
+// block
+//-----------------------------------------------------------
+#{$r} {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  z-index: 999;
+  position: absolute;
+  background-color: white;
+
+  // element
+  //---------------------------------------------------------
+  svg {
+    width: 5rem;
+    height: 5rem;
+    transform-origin: center center;
+    animation: loaderRotate 2s linear infinite;
+  }
+
+  circle {
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-dasharray: 1, 200;
+    animation: loaderDash 1.2s ease-in-out infinite,
+      loaderColor 6s ease-in-out infinite;
+  }
+
+  @keyframes loaderRotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes loaderDash {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -2.1875rem;
+    }
+    100% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -7.75rem;
+    }
+  }
+
+  @keyframes loaderColor {
+    100%,
+    0% {
+      stroke: violet;
+    }
+    40% {
+      stroke: green;
+    }
+    66% {
+      stroke: orange;
+    }
+    80%,
+    90% {
+      stroke: red;
+    }
+  }
+
+  // modifier
+  //---------------------------------------------------------
+}

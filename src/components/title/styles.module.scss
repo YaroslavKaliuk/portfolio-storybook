@@ -1,0 +1,47 @@
+/* .title
+-------------------------------------------------------------*/
+$r: ".title";
+
+// block
+//-----------------------------------------------------------
+#{$r} {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+
+  // element
+  //---------------------------------------------------------
+  h1 {
+    font-size: 2em;
+    line-height: 1em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    line-height: 1.1em;
+  }
+
+  h3 {
+    font-size: 1.17em;
+    line-height: 1.2em;
+  }
+
+  h4 {
+    font-size: 1em;
+    line-height: 1.3em;
+  }
+
+  h5 {
+    font-size: 0.83em;
+    line-height: 1.4em;
+  }
+
+  h6 {
+    font-size: 0.67em;
+    line-height: 1.5em;
+  }
+
+  // modifier
+  //---------------------------------------------------------
+}

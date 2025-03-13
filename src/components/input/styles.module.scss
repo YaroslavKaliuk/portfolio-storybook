@@ -1,0 +1,92 @@
+/* .input
+-------------------------------------------------------------*/
+$r: ".input";
+
+// block
+//-----------------------------------------------------------
+#{$r} {
+  display: flex;
+  position: relative;
+
+  // element
+  //---------------------------------------------------------
+  input {
+    z-index: 1;
+    height: 2.5rem;
+    position: relative;
+    padding-inline: 1rem;
+    border: 0.063rem solid;
+    background-color: white;
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    &::placeholder {
+      color: inherit;
+      opacity: 0.5;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      outline: none;
+
+      ~ #{$r}__title {
+        background-color: white;
+        transform: scale(0.8) translateY(-120%);
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0.5rem;
+    bottom: 0;
+    z-index: 2;
+    margin: auto;
+    height: fit-content;
+    position: absolute;
+    pointer-events: none;
+    padding-inline: 0.5rem;
+    transform-origin: 0% 50%;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+
+  &__message {
+    top: 100%;
+    font-size: 0.6875rem;
+    position: absolute;
+    pointer-events: none;
+    transform-origin: left center;
+    animation: showMessage 0.3s forwards;
+    display: none;
+
+    @keyframes showMessage {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // modifier
+  //---------------------------------------------------------
+  &Error {
+    input {
+      &:not(:disabled) {
+        border-color: red;
+      }
+    }
+
+    #{$r}__title,
+    #{$r}__message {
+      display: flex;
+      color: red;
+    }
+  }
+}

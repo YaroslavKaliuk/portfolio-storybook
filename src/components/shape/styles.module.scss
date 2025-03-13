@@ -1,0 +1,216 @@
+/* .shape
+-------------------------------------------------------------*/
+$r: ".shape";
+
+// block
+//-----------------------------------------------------------
+#{$r} {
+  gap: 1rem;
+  display: grid;
+  place-items: center;
+  grid-template-rows: repeat(auto-fill, minmax(3rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+
+  // element
+  //---------------------------------------------------------
+  .plus {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+
+    &:after,
+    &:before {
+      inset: 0;
+      content: "";
+      margin: auto;
+      position: absolute;
+    }
+
+    &:after,
+    &:before {
+      height: 0.125rem;
+      background-color: currentcolor;
+    }
+
+    &:after {
+      transform: rotate(90deg);
+    }
+  }
+
+  .minus {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+
+    &:before {
+      inset: 0;
+      content: "";
+      margin: auto;
+      position: absolute;
+      height: 0.125rem;
+      background-color: currentcolor;
+    }
+  }
+
+  .cancel {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    position: relative;
+
+    &:after,
+    &:before {
+      inset: 0;
+      content: "";
+      margin: auto;
+      position: absolute;
+      height: 0.125rem;
+      background-color: currentcolor;
+    }
+
+    &:after {
+      transform: rotate(45deg);
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 1rem;
+      height: 0.5rem;
+      border-left: 0.125rem solid;
+      border-bottom: 0.125rem solid;
+      transform: rotate(-45deg);
+    }
+  }
+
+  .grid {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    background-image: linear-gradient(
+        90deg,
+        transparent 0.25rem,
+        #ffffff 0.25rem
+      ),
+      linear-gradient(to top, transparent 0.125rem, currentcolor 0.125rem);
+    background-size: 0.375rem 0.375rem;
+  }
+
+  .list {
+    display: inline-flex;
+    width: 1.25rem;
+    height: 1rem;
+    background-image: linear-gradient(
+      to top,
+      transparent 50%,
+      currentcolor 50%
+    );
+    background-size: 0.375rem 0.375rem;
+  }
+
+  .chevron {
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+
+    &::before {
+      inset: 0;
+      content: "";
+      margin: auto;
+      width: 0.75rem;
+      height: 0.75rem;
+      position: absolute;
+      border-top: 0.125rem solid;
+      border-left: 0.125rem solid;
+    }
+
+    &Top::before {
+      top: 0.5rem;
+      transform: rotate(45deg);
+    }
+
+    &Left::before {
+      left: 0.5rem;
+      transform: rotate(-45deg);
+    }
+
+    &Right::before {
+      right: 0.5rem;
+      transform: rotate(135deg);
+    }
+
+    &Bottom::before {
+      bottom: 0.5rem;
+      transform: rotate(-135deg);
+    }
+  }
+
+  .triangle {
+    display: inline-flex;
+    width: 0;
+    height: 0;
+
+    &Up {
+      border-bottom: 0.375rem solid;
+      border-left: 0.375rem solid rgba(0, 0, 0, 0);
+      border-right: 0.375rem solid rgba(0, 0, 0, 0);
+    }
+
+    &Down {
+      border-top: 0.375rem solid;
+      border-left: 0.375rem solid rgba(0, 0, 0, 0);
+      border-right: 0.375rem solid rgba(0, 0, 0, 0);
+    }
+
+    &Right {
+      border-left: 0.375rem solid;
+      border-top: 0.375rem solid rgba(0, 0, 0, 0);
+      border-bottom: 0.375rem solid rgba(0, 0, 0, 0);
+    }
+
+    &Left {
+      border-right: 0.375rem solid;
+      border-top: 0.375rem solid rgba(0, 0, 0, 0);
+      border-bottom: 0.375rem solid rgba(0, 0, 0, 0);
+    }
+
+    &TopLeft {
+      border-top: 0.5rem solid;
+      border-right: 0.5rem solid rgba(0, 0, 0, 0);
+    }
+
+    &TopRight {
+      border-top: 0.5rem solid;
+      border-left: 0.5rem solid rgba(0, 0, 0, 0);
+    }
+
+    &BottomLeft {
+      border-bottom: 0.5rem solid;
+      border-right: 0.5rem solid rgba(0, 0, 0, 0);
+    }
+
+    &BottomRight {
+      border-bottom: 0.5rem solid;
+      border-left: 0.5rem solid rgba(0, 0, 0, 0);
+    }
+  }
+
+  // modifier
+  //---------------------------------------------------------
+}

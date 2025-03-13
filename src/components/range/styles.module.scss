@@ -1,0 +1,86 @@
+/* .range
+-------------------------------------------------------------*/
+$r: ".range";
+
+$track-width: 160px;
+$track-height: 4px;
+$thumb-size: 16px;
+$track-color: lightgrey;
+$thumb-color: currentcolor;
+$progress-color: currentcolor;
+
+@function track-color($i: 1) {
+  $val: #{$i}px 0 0 -#{calc(($thumb-size - $track-height) / 2)} #{$track-color};
+  @if $i == 1 {
+    @for $k from 2 through $track-width {
+      $val: #{$val}, track-color($k);
+    }
+  }
+  @return $val;
+}
+
+@function progress-color($i: 1) {
+  $val: -#{$i}px 0 0 -#{calc(($thumb-size - $track-height) / 2)} #{$progress-color};
+  @if $i == 1 {
+    @for $k from 2 through $track-width {
+      $val: #{$val}, progress-color($k);
+    }
+  }
+  @return $val;
+}
+
+// block
+//-----------------------------------------------------------
+#{$r} {
+  display: flex;
+  width: $track-width;
+  overflow: hidden;
+
+  // element
+  //---------------------------------------------------------
+  input {
+    width: 100%;
+
+    &::-webkit-slider-thumb {
+      border: 0;
+      appearance: none;
+      width: $thumb-size;
+      height: $thumb-size;
+      border-radius: 100%;
+      background-color: $thumb-color;
+      box-shadow: progress-color(), track-color();
+    }
+
+    &::-moz-range-thumb {
+      border: 0;
+      appearance: none;
+      width: $thumb-size;
+      height: $thumb-size;
+      border-radius: 100%;
+      background-color: $thumb-color;
+      box-shadow: progress-color(), track-color();
+    }
+
+    &:hover {
+      cursor: grab;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      filter: grayscale(1);
+    }
+  }
+
+  &__isVertical {
+    transform: rotate(-90deg) translate3d(-100%, 0, 0);
+    transform-origin: 0% 50%;
+  }
+
+  // modifier
+  //---------------------------------------------------------
+}

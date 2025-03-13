@@ -1,0 +1,157 @@
+/* .drawer
+-------------------------------------------------------------*/
+$r: ".drawer";
+
+// block
+//-----------------------------------------------------------
+#{$r} {
+  inset: 0;
+  z-index: 9999;
+  position: fixed;
+  pointer-events: none;
+
+  // element
+  //---------------------------------------------------------
+  &__bg {
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  &__content {
+    inset: 0;
+    left: auto;
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 24rem);
+    position: absolute;
+    visibility: hidden;
+    background-color: white;
+    transform: translate3d(100%, 0, 0);
+    transition: transform 0.3s, visibility 0.3s;
+  }
+
+  &__header {
+    flex: none;
+    display: flex;
+    z-index: 1;
+    min-height: 4rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      inset: 0;
+      top: 100%;
+      height: 0.0625rem;
+      position: absolute;
+      background-color: lightgrey;
+    }
+
+    &Center {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+    }
+
+    &Left,
+    &Right {
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
+      position: relative;
+
+      > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        color: grey;
+        cursor: pointer;
+        font-size: 1.5rem;
+        position: absolute;
+
+        @media (pointer: fine) {
+          &:hover {
+            color: currentcolor;
+          }
+        }
+      }
+    }
+
+    &Right {
+      order: 1;
+    }
+
+    &Left ~ &Center {
+      padding-left: 0;
+    }
+
+    &Right ~ &Center {
+      padding-right: 0;
+    }
+  }
+
+  &__main {
+    flex-grow: 1;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden auto;
+    overscroll-behavior-y: none;
+  }
+
+  &__footer {
+    gap: 1rem;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 1;
+    padding: 1rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      inset: 0;
+      bottom: 100%;
+      height: 0.0625rem;
+      position: absolute;
+      background-color: lightgrey;
+    }
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  &:has([name="drawer"]:checked) {
+    pointer-events: all;
+
+    #{$r}__bg {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #{$r}__content {
+      visibility: visible;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  // modifier
+  //---------------------------------------------------------
+  &__isLeftSide {
+    #{$r}__content {
+      left: 0;
+      right: auto;
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+}

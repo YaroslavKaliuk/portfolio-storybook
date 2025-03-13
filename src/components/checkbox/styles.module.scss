@@ -1,0 +1,71 @@
+/* .checkbox
+-------------------------------------------------------------*/
+$r: ".checkbox";
+
+// block
+//-----------------------------------------------------------
+#{$r} {
+  display: inline-flex;
+  min-width: 0;
+  cursor: pointer;
+
+  // element
+  //---------------------------------------------------------
+  input {
+    flex: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    cursor: pointer;
+    position: relative;
+    border: 0.063rem solid;
+
+    &::before {
+      content: "";
+      inset: 0;
+      width: 40%;
+      height: 72%;
+      margin: auto;
+      position: absolute;
+      border-right: 0.125rem solid;
+      border-bottom: 0.125rem solid;
+      opacity: 0;
+      transform: scale(0) rotate(90deg);
+      transition: opacity 0.15s, transform 0.15s;
+    }
+
+    &:checked::before {
+      opacity: 1;
+      transform: scale(1) rotate(45deg) translate3d(-8%, -4%, 0);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+
+      ~ #{$r}__title {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+    }
+
+    @media (pointer: fine) {
+      &:not(:disabled):hover,
+      &:not(:disabled):focus-visible {
+        box-shadow: 0 0 0 0.063rem;
+      }
+    }
+  }
+
+  &__title {
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    line-height: 1.125rem;
+    padding-left: 0.5rem;
+  }
+
+  // modifier
+  //---------------------------------------------------------
+}

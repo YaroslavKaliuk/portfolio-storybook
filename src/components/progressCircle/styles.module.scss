@@ -1,0 +1,28 @@
+/* .progressCircle
+-------------------------------------------------------------*/
+$r: ".progressCircle";
+
+// block
+//-----------------------------------------------------------
+#{$r} {
+  display: flex;
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  border-radius: 100%;
+
+  // element
+  //---------------------------------------------------------
+  &__percent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0.5rem;
+    position: absolute;
+    border-radius: 100%;
+    background-color: white;
+  }
+
+  // modifier
+  //---------------------------------------------------------
+}
