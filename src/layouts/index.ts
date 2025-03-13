@@ -1,4 +1,4 @@
-export { App } from "@/layouts/app";
-export { Main } from "@/layouts/main";
-export { Header } from "@/layouts/header";
-export { Footer } from "@/layouts/footer";
+export { App } from "./app";
+export { Main } from "./main";
+export { Header } from "./header";
+export { Footer } from "./footer";

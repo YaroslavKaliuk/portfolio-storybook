@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Switch } from ".";
+import { Switcher } from ".";
 
 const meta = {
-  title: "Components/Forms/Switch",
-  component: Switch,
+  title: "Components/Forms/Switcher",
+  component: Switcher,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Switch>;
+} satisfies Meta<typeof Switcher>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

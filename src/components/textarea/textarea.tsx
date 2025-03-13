@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 
-export interface ITextareaProps
+export interface TextareaProps
   extends React.DetailedHTMLProps<
     React.TextareaHTMLAttributes<HTMLTextAreaElement>,
     HTMLTextAreaElement
@@ -12,7 +12,7 @@ export interface ITextareaProps
   isError?: boolean;
 }
 
-export const Textarea: FC<ITextareaProps> = ({
+export const Textarea: FC<TextareaProps> = ({
   title,
   message,
   isError,
@@ -26,5 +26,3 @@ export const Textarea: FC<ITextareaProps> = ({
     </label>
   );
 };
-
-export default Textarea;

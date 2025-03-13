@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 
-export interface ICheckboxProps
+export interface CheckboxProps
   extends React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
@@ -10,7 +10,7 @@ export interface ICheckboxProps
   title?: string;
 }
 
-export const Checkbox: FC<ICheckboxProps> = ({ title, ...props }) => {
+export const Checkbox: FC<CheckboxProps> = ({ title, ...props }) => {
   return (
     <label className={cn(styles.checkbox)}>
       <input type="checkbox" defaultChecked={false} {...props} />
@@ -18,5 +18,3 @@ export const Checkbox: FC<ICheckboxProps> = ({ title, ...props }) => {
     </label>
   );
 };
-
-export default Checkbox;

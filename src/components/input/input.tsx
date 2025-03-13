@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 
-export interface IInputProps
+export interface InputProps
   extends React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
@@ -12,7 +12,7 @@ export interface IInputProps
   isError?: boolean;
 }
 
-export const Input: FC<IInputProps> = ({
+export const Input: FC<InputProps> = ({
   title,
   message,
   isError,
@@ -26,5 +26,3 @@ export const Input: FC<IInputProps> = ({
     </label>
   );
 };
-
-export default Input;

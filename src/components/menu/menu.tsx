@@ -3,9 +3,9 @@ import cn from "classnames";
 import styles from "./styles.module.scss";
 import Icon from "@/icons";
 
-export interface IMenuProps {}
+export interface MenuProps {}
 
-export const Menu: FC<IMenuProps> = () => {
+export const Menu: FC<MenuProps> = () => {
   return (
     <nav className={cn(styles.menu)}>
       <input type="checkbox" name="menu" id="menu" hidden />
@@ -221,5 +221,3 @@ export const Menu: FC<IMenuProps> = () => {
     </nav>
   );
 };
-
-export default Menu;

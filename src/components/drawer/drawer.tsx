@@ -3,7 +3,7 @@ import cn from "classnames";
 import styles from "./styles.module.scss";
 import Icon from "@/icons";
 
-export interface IDrawerProps {
+export interface DrawerProps {
   id: string;
   title?: string;
   footer?: ReactNode;
@@ -13,7 +13,7 @@ export interface IDrawerProps {
   isRightButton?: boolean;
 }
 
-export const Drawer: FC<IDrawerProps> = ({
+export const Drawer: FC<DrawerProps> = ({
   children,
   id,
   title,
@@ -58,5 +58,3 @@ export const Drawer: FC<IDrawerProps> = ({
     </div>
   );
 };
-
-export default Drawer;

@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 import Icon from "@/icons";
 import { DetailedHTMLProps, InputHTMLAttributes } from "react";
 
-interface IModalProps
+interface ModalProps
   extends DetailedHTMLProps<
     InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
@@ -15,7 +15,7 @@ interface IModalProps
   children?: ReactNode;
 }
 
-export const Modal: FC<IModalProps> = ({
+export const Modal: FC<ModalProps> = ({
   children,
   id,
   title,
@@ -41,5 +41,3 @@ export const Modal: FC<IModalProps> = ({
     </div>
   );
 };
-
-export default Modal;

@@ -2,18 +2,18 @@ import React, { FC } from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 
-interface Item {
+interface tem {
   id?: string;
   title?: string;
   content?: string;
   isDisabled?: boolean;
 }
 
-export interface IAccordionProps {
+export interface AccordionProps {
   items?: Item[];
 }
 
-export const Accordion: FC<IAccordionProps> = ({ items, ...props }) => {
+export const Accordion: FC<AccordionProps> = ({ items, ...props }) => {
   return (
     <div className={cn(styles.accordion)}>
       {items?.map((item, index) => (

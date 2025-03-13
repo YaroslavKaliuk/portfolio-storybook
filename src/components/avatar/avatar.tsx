@@ -2,12 +2,12 @@ import React, { FC } from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 
-export interface IAvatarProps {
+export interface AvatarProps {
   href?: string;
   imgSrc?: string;
 }
 
-export const Avatar: FC<IAvatarProps> = ({ href, imgSrc }) => {
+export const Avatar: FC<AvatarProps> = ({ href, imgSrc }) => {
   const Component = href ? "a" : "div";
   const props = href ? { href: `${href}` } : {};
   return (
@@ -17,5 +17,3 @@ export const Avatar: FC<IAvatarProps> = ({ href, imgSrc }) => {
     </Component>
   );
 };
-
-export default Avatar;

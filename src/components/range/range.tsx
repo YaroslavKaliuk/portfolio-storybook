@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 
-export interface IRangeProps
+export interface RangeProps
   extends React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
@@ -10,12 +10,10 @@ export interface IRangeProps
   isVertical?: boolean;
 }
 
-export const Range: FC<IRangeProps> = ({ isVertical, ...props }) => {
+export const Range: FC<RangeProps> = ({ isVertical, ...props }) => {
   return (
     <div className={cn(styles.range, isVertical && styles.range__isVertical)}>
       <input type="range" {...props} />
     </div>
   );
 };
-
-export default Range;

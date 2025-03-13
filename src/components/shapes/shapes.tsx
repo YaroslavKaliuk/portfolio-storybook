@@ -2,11 +2,11 @@ import React, { FC } from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 
-export interface IShapeProps {}
+export interface ShapesProps {}
 
-export const Shape: FC<IShapeProps> = () => {
+export const Shapes: FC<ShapesProps> = () => {
   return (
-    <div className={cn(styles.shape)}>
+    <div className={cn(styles.shapes)}>
       <div className={cn(styles.plus)}></div>
       <div className={cn(styles.minus)}></div>
       <div className={cn(styles.cancel)}></div>
@@ -28,4 +28,3 @@ export const Shape: FC<IShapeProps> = () => {
     </div>
   );
 };
-export default Shape;

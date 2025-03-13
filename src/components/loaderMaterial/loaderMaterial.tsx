@@ -2,11 +2,11 @@ import React, { FC } from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 
-export interface ILoaderMaterialProps {
+export interface LoaderMaterialProps {
   size?: number;
 }
 
-export const LoaderMaterial: FC<ILoaderMaterialProps> = ({ size }) => {
+export const LoaderMaterial: FC<LoaderMaterialProps> = ({ size }) => {
   return (
     <div className={cn(styles.loaderMaterial)}>
       <svg
@@ -25,5 +25,3 @@ export const LoaderMaterial: FC<ILoaderMaterialProps> = ({ size }) => {
     </div>
   );
 };
-
-export default LoaderMaterial;

@@ -2,13 +2,13 @@ import React, { FC } from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 
-export interface IProgressCircleProps {
+export interface ProgressCircleProps {
   percent?: number;
   colorLine?: string;
   colorProgress?: string;
 }
 
-export const ProgressCircle: FC<IProgressCircleProps> = ({
+export const ProgressCircle: FC<ProgressCircleProps> = ({
   percent,
   colorLine,
   colorProgress,
@@ -24,5 +24,3 @@ export const ProgressCircle: FC<IProgressCircleProps> = ({
     </div>
   );
 };
-
-export default ProgressCircle;

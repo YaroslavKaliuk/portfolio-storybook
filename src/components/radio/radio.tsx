@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 
-export interface IRadioProps
+export interface RadioProps
   extends React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
@@ -10,7 +10,7 @@ export interface IRadioProps
   title?: string;
 }
 
-export const Radio: FC<IRadioProps> = ({ title, ...props }) => {
+export const Radio: FC<RadioProps> = ({ title, ...props }) => {
   return (
     <label className={cn(styles.radio)}>
       <input type="radio" defaultChecked={false} {...props} />
@@ -18,5 +18,3 @@ export const Radio: FC<IRadioProps> = ({ title, ...props }) => {
     </label>
   );
 };
-
-export default Radio;

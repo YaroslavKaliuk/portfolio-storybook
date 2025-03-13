@@ -2,12 +2,10 @@ import React, { FC, ReactNode } from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 
-export interface IAppProps {
+export interface AppProps {
   children?: ReactNode;
 }
 
-export const App: FC<IAppProps> = ({ children }) => {
+export const App: FC<AppProps> = ({ children }) => {
   return <div className={cn(styles.app)}>{children}</div>;
 };
-
-export default App;

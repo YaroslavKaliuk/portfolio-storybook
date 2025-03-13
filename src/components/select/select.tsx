@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 
-export interface ISelectProps
+export interface SelectProps
   extends React.DetailedHTMLProps<
     React.SelectHTMLAttributes<HTMLSelectElement>,
     HTMLSelectElement
@@ -12,7 +12,7 @@ export interface ISelectProps
   isError?: boolean;
 }
 
-export const Select: FC<ISelectProps> = ({
+export const Select: FC<SelectProps> = ({
   title,
   message,
   isError,
@@ -32,5 +32,3 @@ export const Select: FC<ISelectProps> = ({
     </label>
   );
 };
-
-export default Select;
